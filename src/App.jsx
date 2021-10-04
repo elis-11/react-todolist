@@ -1,5 +1,3 @@
-/* eslint-disable no-undef */
-/* eslint-disable jsx-a11y/no-redundant-roles */
 import FilterButton from "./components/FilterButton";
 import Form from "./components/Form";
 import Todo from "./components/Todo";
@@ -31,6 +29,10 @@ function App(props) {
       >
         {taskList}
       </ul>
+
+      <button type="button" onClick={() => alert("hi!")}>
+        Say hi!
+      </button>
     </div>
   );
 }
