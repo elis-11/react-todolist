@@ -4,9 +4,9 @@ import App from './App.jsx';
 import './index.css';
 
 const DATA = [
-  { id: "todo-0", name: "Eat", completed: true },
-  { id: "todo-1", name: "Sleep", completed: false },
-  { id: "todo-2", name: "Repeat", completed: false }
+  { id: "todo-0", name: "Task-1", completed: true },
+  { id: "todo-1", name: "Task-2", completed: false },
+  { id: "todo-2", name: "Task-3", completed: false }
 ];
 
 ReactDOM.render(
