@@ -5,8 +5,8 @@
   box-sizing: border-box;
 }
 *:focus {
-  outline: 3px solid #999b9c;
-  background-color: #999b9c;
+  outline: 3px solid grey;
+  // outline: 3px dashed #228bec;
   outline-offset: 0;
 }
 html {
@@ -59,7 +59,7 @@ body {
   max-width: 68rem;
   margin: 0 auto;
   font: 1.6rem/1.25 Arial, sans-serif;
-  background-color: #dddada;
+  background-color: #f5f5f5;
   color: #4d4d4d;
 }
 @media screen and (min-width: 620px) {
@@ -69,30 +69,38 @@ body {
   }
 }
 /*END RESETS*/
+
 /* GLOBAL STYLES */
 .form-group > input[type="text"] {
   display: inline-block;
   margin-top: 0.4rem;
 }
 .btn {
-  padding: 0.8rem 1rem 0.7rem;
+  padding: 1rem 0.2rem 1rem;
   border: 0.2rem solid #4d4d4d;
   cursor: pointer;
+  border-radius: 10px;
   text-transform: capitalize;
-}
-.btn.toggle-btn {
-  border-width: 1px;
-  border-color: #d3d3d3;
-}
-.btn.toggle-btn[aria-pressed="true"] {
-  text-decoration: underline;
-  border-color: #4d4d4d;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 2.5rem 5rem 0 rgba(0, 0, 0, 0.1);
+
+
+  .toggle-btn {
+    border-width: 1px;
+    border-color: #d3d3d3;
+  }
+  .toggle-btn[aria-pressed="true"] {
+    text-decoration: underline;
+    border-color: #4d4d4d;
+  }
 }
 .btn__danger {
   color: #fff;
-  width: 50px;
-  background-color: #eb7f7f;
-  border-color: #d8838b;
+  background-color: #ca3c3c;
+  border-color: #b9616a;
+  border-radius: 10px;
+
+  // outline: 5px solid rgb(112, 106, 106);
+
 }
 .btn__filter {
   border-color: lightgrey;
@@ -148,31 +156,33 @@ body {
 }
 /* END GLOBAL STYLES */
 .todoapp {
-  background: #fff;
+  background: rgb(235, 233, 233);
   margin: 2rem 0 4rem 0;
   padding: 1rem;
   position: relative;
+  border-radius: 10px;
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 2.5rem 5rem 0 rgba(0, 0, 0, 0.1);
 }
 @media screen and (min-width: 550px) {
   .todoapp {
     padding: 4rem;
   }
-}
-.todoapp > * {
-  max-width: 50rem;
-  margin-left: auto;
-  margin-right: auto;
-}
-.todoapp > form {
-  max-width: 100%;
-}
-.todoapp > h1 {
-  display: block;
-  max-width: 100%;
-  text-align: center;
-  margin: 0;
-  margin-bottom: 1rem;
+
+  > * {
+    max-width: 50rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  > form {
+    max-width: 100%;
+  }
+  > h1 {
+    display: block;
+    max-width: 100%;
+    text-align: center;
+    margin: 0;
+    margin-bottom: 1rem;
+  }
 }
 .label__lg {
   line-height: 1.01567;
@@ -272,7 +282,9 @@ body {
 }
 .c-cb > input[type="checkbox"]:focus + label::before {
   border-width: 4px;
-  outline: 3px solid #4b4f52;
+  outline: 3px solid #b3bac0;
+  // outline: 3px dashed #b3bac0;
+  box-shadow: 1px 1px 4px rgba(255, 255, 255, 0);
 }
 .c-cb > label::after {
   box-sizing: content-box;
