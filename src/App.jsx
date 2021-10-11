@@ -4,6 +4,7 @@ import Form from "./components/Form";
 import FilterButton from "./components/FilterButton";
 import Todo from "./components/Todo";
 import { nanoid } from "nanoid";
+import './App.scss'
 
 function usePrevious(value) {
   const ref = useRef();
@@ -34,7 +35,7 @@ function App(props) {
       }
       return task;
     });
-    setTasks(updatedTasks);
+    setTasks(updatedTasks);  
   }
 
   function deleteTask(id) {
