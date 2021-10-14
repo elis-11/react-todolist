@@ -86,7 +86,7 @@ body {
 
   .toggle-btn {
     border-width: 1px;
-    border-color: #d3d3d3;
+    border-color: #777171;
   }
   .toggle-btn[aria-pressed="true"] {
     text-decoration: underline;
@@ -95,7 +95,7 @@ body {
 }
 .btn__danger {
   color: #fff;
-  background-color: #ca3c3c;
+  background-color: #ff5f5f;
   border-color: #b9616a;
   border-radius: 10px;
 
@@ -107,7 +107,7 @@ body {
 }
 .btn__primary {
   color: #fff;
-  background-color: #000;
+  background-color: rgb(124, 211, 90);
 }
 .btn-group {
   display: flex;
