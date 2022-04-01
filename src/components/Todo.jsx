@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 
-function usePrevious(value) {
+const usePrevious=(value)=> {
   const ref = useRef();
   useEffect(() => {
     ref.current = value;
@@ -8,7 +8,7 @@ function usePrevious(value) {
   return ref.current;
 }
 
-function Todo(props) {
+const Todo=(props)=> {
   const [isEditing, setEditing] = useState(false);
   const [newName, setNewName] = useState("");
 
@@ -17,11 +17,11 @@ function Todo(props) {
 
   const wasEditing = usePrevious(isEditing);
 
-  function handleChange(e) {
+  const handleChange=(e)=> {
     setNewName(e.target.value);
   }
 
-  function handleSubmit(e) {
+  const handleSubmit=(e)=> {
     e.preventDefault();
     if (!newName.trim()) {
       return;

@@ -4,15 +4,15 @@ import Form from "./components/Form";
 import FilterButton from "./components/FilterButton";
 import Todo from "./components/Todo";
 import { nanoid } from "nanoid";
-import './App.scss'
+import "./App.scss";
 
-function usePrevious(value) {
+const usePrevious = (value) => {
   const ref = useRef();
   useEffect(() => {
     ref.current = value;
   });
   return ref.current;
-}
+};
 
 const FILTER_MAP = {
   All: () => true,
@@ -21,11 +21,11 @@ const FILTER_MAP = {
 };
 const FILTER_NAMES = Object.keys(FILTER_MAP);
 
-function App(props) {
+const App = (props) => {
   const [tasks, setTasks] = useState(props.tasks);
   const [filter, setFilter] = useState("All");
 
-  function toggleTaskCompleted(id) {
+  const toggleTaskCompleted = (id) => {
     const updatedTasks = tasks.map((task) => {
       // if this task has the same ID as the edited task
       if (id === task.id) {
@@ -35,15 +35,15 @@ function App(props) {
       }
       return task;
     });
-    setTasks(updatedTasks);  
-  }
+    setTasks(updatedTasks);
+  };
 
-  function deleteTask(id) {
+  const deleteTask = (id) => {
     const remainingTasks = tasks.filter((task) => id !== task.id);
     setTasks(remainingTasks);
-  }
+  };
 
-  function editTask(id, newName) {
+  const editTask = (id, newName) => {
     const editedTaskList = tasks.map((task) => {
       // if this task has the same ID as the edited task
       if (id === task.id) {
@@ -53,7 +53,7 @@ function App(props) {
       return task;
     });
     setTasks(editedTaskList);
-  }
+  };
 
   const taskList = tasks
     .filter(FILTER_MAP[filter])
@@ -78,10 +78,10 @@ function App(props) {
     />
   ));
 
-  function addTask(name) {
+  const addTask = (name) => {
     const newTask = { id: "todo" + nanoid(), name: name, completed: false };
     setTasks([...tasks, newTask]);
-  }
+  };
 
   const tasksNoun = taskList.length !== 1 ? "tasks" : "task";
   const headingText = `${taskList.length} ${tasksNoun} remaining`;
@@ -112,6 +112,6 @@ function App(props) {
       </ul>
     </div>
   );
-}
+};
 
 export default App;
